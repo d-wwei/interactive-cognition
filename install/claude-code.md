@@ -3,18 +3,15 @@
 ## Quick install
 
 ```bash
-# 1. Copy cognitive protocol to Claude's config
-cp cognitive-protocol.md ~/.claude/interactive-cognition.md
-
-# 2. Add reference in CLAUDE.md
-echo '@~/.claude/interactive-cognition.md' >> ~/.claude/CLAUDE.md
+# 1. Inject core rules into CLAUDE.md (direct content injection — works on all versions)
+cat cognitive-protocol.md >> ~/.claude/CLAUDE.md
 ```
 
 ## What gets loaded where
 
 | File | Destination | Purpose |
 |---|---|---|
-| `cognitive-protocol.md` | `~/.claude/interactive-cognition.md` | Always-on core rules (~30 lines) |
+| `cognitive-protocol.md` | `~/.claude/CLAUDE.md` (appended) | Always-on core rules (~30 lines) |
 | `SKILL.md` | `~/.claude/skills/interactive-cognition/SKILL.md` | Full reference (loaded on demand) |
 | `anti-patterns.md` | `~/.claude/skills/interactive-cognition/anti-patterns.md` | Detailed anti-pattern guide |
 | `examples.md` | `~/.claude/skills/interactive-cognition/examples.md` | Before/after reference |
@@ -22,8 +19,8 @@ echo '@~/.claude/interactive-cognition.md' >> ~/.claude/CLAUDE.md
 ## Full install (with skill files)
 
 ```bash
-# 1. Core rules
-cp cognitive-protocol.md ~/.claude/interactive-cognition.md
+# 1. Core rules (inject directly into CLAUDE.md)
+cat cognitive-protocol.md >> ~/.claude/CLAUDE.md
 
 # 2. Skill files
 mkdir -p ~/.claude/skills/interactive-cognition
@@ -31,8 +28,7 @@ cp SKILL.md ~/.claude/skills/interactive-cognition/
 cp anti-patterns.md ~/.claude/skills/interactive-cognition/
 cp examples.md ~/.claude/skills/interactive-cognition/
 
-# 3. Register in CLAUDE.md
-echo '@~/.claude/interactive-cognition.md' >> ~/.claude/CLAUDE.md
+# 3. (Core rules already injected in step 1)
 ```
 
 ## Verify
@@ -46,7 +42,6 @@ Interactive Cognition operates on a unique axis — inter-personal cognition. It
 ## Uninstall
 
 ```bash
-rm ~/.claude/interactive-cognition.md
+# Remove the Interactive Cognition section from ~/.claude/CLAUDE.md (search for "# Interactive Cognition — Cognitive Protocol" header)
 rm -rf ~/.claude/skills/interactive-cognition
-# Remove the @~/.claude/interactive-cognition.md line from ~/.claude/CLAUDE.md
 ```
