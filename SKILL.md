@@ -1,3 +1,8 @@
+---
+name: 知彼
+description: "知彼——建模他人的思考，管理信息流，据此调整策略。"
+---
+
 # Interactive Cognition | 知彼
 
 A cognitive base that shifts reasoning from internal analysis to modeling others' cognition and managing information flow. Built on Guiguzi and Sun Tzu.
