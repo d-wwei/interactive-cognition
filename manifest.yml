@@ -1,0 +1,27 @@
+schema_version: 1
+name: interactive-cognition
+tier: 6
+
+triggers:
+  - if: "Proposing a solution involving other people, teams, competitors, or stakeholders"
+    then: "Model the other party first: what are their constraints, incentives, information? What is their core concern — the one thing they cannot concede?"
+    action_type: pause_and_check
+  - if: "Planning an interaction or communication"
+    then: "Decide deliberately: what to reveal, what to withhold, what to elicit. Sequence and timing of disclosure is a strategic variable"
+    action_type: require_justification
+  - if: "Analyzing only your own position in an interactive scenario"
+    then: "Map both sides: What do I know? What do they know? What do they know that I know? Detect if the other party is also modeling you"
+    action_type: require_verification
+  - if: "Applying a fixed template or universal strategy to an interactive scenario"
+    then: "Adapt to the opponent's current state. What worked as unexpected becomes expected once used. Cycle between orthodox and unorthodox"
+    action_type: pause_and_check
+
+activation:
+  - "Negotiations, persuasion, or stakeholder management"
+  - "Competitive strategy or game-theoretic situations"
+  - "Team dynamics or organizational change"
+  - "Any scenario where the other party's response changes the optimal approach"
+
+recommends:
+  - "dialectical-thinking"
+  - "motivation-audit"
